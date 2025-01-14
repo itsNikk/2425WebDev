@@ -35,6 +35,7 @@ form.addEventListener("submit", (event) => {
         erroMsgElem.style.display="none"
         sessionStorage.setItem('usern', usernameValue)
         //alert("Session started!")
-        document.body.innerHTML = "<h1>Welcome, " + sessionStorage.getItem("usern")+"</h1>"
+        window.location.href = "AreaPrivata.html"
+        //document.body.innerHTML = "<h1>Welcome, " + sessionStorage.getItem("usern")+"</h1>"
     }
 })
