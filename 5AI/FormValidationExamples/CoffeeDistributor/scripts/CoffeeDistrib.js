@@ -1,4 +1,9 @@
-const codeErrPar = document.getElementById("newCodeErr")
+const codeErrElem = document.getElementById("newCodeErr")
+const capsuleErrElem = document.getElementById("capsuleErr")
+const codiceInputElem = document.getElementById("nuovoCodiceInput")
+const capsuleInputElem = document.getElementById("capsuleInput")
+const reportPlaceElem = document.getElementById("reportPlace")
+const reportCodeErrElem = document.getElementById("reportCodeErr")
 
 class Distributore {
     constructor() {
@@ -10,19 +15,25 @@ class Distributore {
     aggiungiCapsule(n) {
         if (n > 0) {
             this.capsule += n;
+            capsuleInputElem.classList.add("good")
+            capsuleErrElem.classList.remove("error")
+            capsuleErrElem.textContent = "Capsule aggiunte: " + n + ". Totale capsule: " + this.capsule
             console.log("Capsule aggiunte: " + n + ". Totale capsule: " + this.capsule);
         } else {
-            console.log("Numero di capsule non valido.");
+            capsuleInputElem.classList.remove("good")
+            capsuleErrElem.classList.add("error")
+            capsuleErrElem.textContent = "Numero di capsule non valido."
         }
     }
 
-    // Metodo per aggiungere un codice
     aggiungiCodice(c) {
         if (!(c in this.codici)) {
             this.codici[c] = 0;
+            codiceInputElem.classList.add("good")
             console.log("Codice aggiunto: " + c);
         } else {
-            console.log("Il codice " + c + " esiste già.");
+            codiceInputElem.classList.remove("good")
+            codeErrElem.textContent = "Il codice " + c + " esiste già."
         }
     }
 
@@ -32,10 +43,12 @@ class Distributore {
             console.log("Codice non valido: " + c);
             return;
         }
-        if (n <= 0) {
+
+        if (n <= 0 || isNaN(n)) {
             console.log("Numero di caffè non valido.");
             return;
         }
+
         if (this.capsule >= n) {
             this.capsule -= n;
             this.codici[c] += n;
@@ -48,12 +61,16 @@ class Distributore {
     // Metodo per generare un report
     report(c) {
         if (!(c in this.codici)) {
-            console.log("Codice non valido: " + c);
+            reportCodeErrElem.textContent = "Codice non valido: " + c
+            reportPlaceElem.textContent = ""
             return;
         }
-        console.log("Report per il codice " + c + ":");
-        console.log("Caffè addebitati: " + this.codici[c]);
-        console.log("Capsule disponibili: " + this.capsule);
+
+        reportCodeErrElem.textContent = ""
+        reportPlaceElem.innerHTML = "Report per il codice " + c + ":" + "<br>"
+            + "Caffè addebitati: " + this.codici[c] + "<br>"
+            + "Capsule disponibili: " + this.capsule
+
     }
 }
 
@@ -79,9 +96,9 @@ document.getElementById("aggiungiCodiceBtn").addEventListener("click", () => {
     const codice = document.getElementById("nuovoCodiceInput").value;
     if (codice === "") {
         document.getElementById("nuovoCodiceInput").focus()
-        codeErrPar.textContent = "Codice non valido"
+        codeErrElem.textContent = "Codice non valido"
     } else {
-        codeErrPar.textContent = ""
+        codeErrElem.textContent = ""
         mioDistributore.aggiungiCodice(codice);
     }
 });
