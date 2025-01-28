@@ -1,3 +1,5 @@
+const reportDiv = document.getElementById("report");
+
 class DistributoreCaffe {
     constructor() {
         this.capsuleDisponibili = 0;
@@ -44,7 +46,10 @@ function aggiungiCapsule(numCapsule) {
 
 function consumaCaffe() {
     const codice = document.getElementById("codice").value;
-    if (codice === null || codice === undefined || codice === "") return;
+    if (codice === null || codice === undefined || codice === ""){ 
+        reportDiv.textContent = "Errore: Inserire Codice utente"   
+        return;
+    }
     if (distributore.erogaCaffe(codice)) {
         mostraReport(codice);
     } else {
@@ -53,6 +58,6 @@ function consumaCaffe() {
 }
 
 function mostraReport(codice) {
-    const reportDiv = document.getElementById("report");
+   
     reportDiv.innerHTML = distributore.generaReport(codice);
 }
