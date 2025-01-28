@@ -57,33 +57,29 @@ class Distributore {
     }
 }
 
-// Funzione per caricare capsule
 const caricaCapsule = (distributore) => {
     const n = parseInt(document.getElementById("capsuleInput").value, 10);
     distributore.aggiungiCapsule(n);
 };
 
-// Funzione per erogare caffè
 const erogaCaffe = (distributore) => {
     const c = document.getElementById("codiceInput").value;
     const n = parseInt(document.getElementById("numeroCaffeInput").value, 10);
     distributore.eroga(n, c);
 };
 
-// Funzione per generare un report
 const ottieniReport = (distributore) => {
     const c = document.getElementById("reportCodiceInput").value;
     distributore.report(c);
 };
 
-// Esempio d'uso
+//Si potrebbe sostituire con una funzione che restituisce un Distributore (incapsulamento)
 const mioDistributore = new Distributore();
 document.getElementById("aggiungiCodiceBtn").addEventListener("click", () => {
     const codice = document.getElementById("nuovoCodiceInput").value;
     if (codice === "") {
         document.getElementById("nuovoCodiceInput").focus()
         codeErrPar.textContent = "Codice non valido"
-        return
     } else {
         codeErrPar.textContent = ""
         mioDistributore.aggiungiCodice(codice);
