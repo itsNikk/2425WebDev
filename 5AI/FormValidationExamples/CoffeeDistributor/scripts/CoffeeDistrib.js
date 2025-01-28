@@ -57,14 +57,6 @@ class Distributore {
     }
 }
 
-// Funzione per istanziare il distributore
-/*const defineDistributore = () => {
-    const distributore = new Distributore();
-    console.log("Distributore di caffè inizializzato.");
-    return distributore;
-};
-*/
-
 // Funzione per caricare capsule
 const caricaCapsule = (distributore) => {
     const n = parseInt(document.getElementById("capsuleInput").value, 10);
