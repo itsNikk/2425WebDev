@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FV2_CountdownRedirect</title>
+    <script src="script/FV_countdown.js"></script>
+</head>
+<body>
+<h1>Modulo di Registrazione</h1>
+<form id="redirectForm">
+    <div>
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name">
+        <p id="nameError" class="error"></p>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <p id="emailError" class="error"></p>
+    </div>
+    <button type="submit">Invia</button>
+    <p id="successMessage"></p>
+    <p id="redirectMessage"></p>
+</form>
+</body>
+</html>

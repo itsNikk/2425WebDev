@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FV_Es1</title>
+    <script src="scripts/formVales1.js"></script>
+</head>
+
+<body>
+    <form id="registrationForm">
+        <div>
+            <label for="name">Nome:</label>
+            <input type="text" name="name" id="name">
+            <p id="nameError" class="error"></p>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email">
+            <p id="emailError" class="error"></p>
+        </div>
+        <button type="submit">Invia</button>
+        <p id="successMessage"></p>
+        <p id="redirectMsg"></p>
+    </form>
+</body>
+</html>
