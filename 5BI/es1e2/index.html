@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validazione form</title>
+    <script src="scripts/validation.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <form id="redirectForm">
+
+        <div>
+            <label for="username">username</label>
+            <input type="text" id="username" name="username" placeholder="inserisci username">
+            <p id="nameError" class="error"></p>
+            </div>
+            <div>
+                <input type="email" id="email" name="email" placeholder="inserisci email">
+                <p id="emailError" class="error"></p>
+                </div>
+                <div>
+                    <button id="invia" type="submit">invia</button>
+                    <p id="successMessage"></p>
+                    <p id="redirectMessage" ></p>
+        </div>
+    </form>
+</body>
+</html>
