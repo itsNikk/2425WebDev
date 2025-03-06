@@ -5,7 +5,7 @@ if (selectedNumbers.length === 0) {
     window.location.href = 'es1Index.html';
 }
 
-// Calcolare le statistiche
+
 const total = selectedNumbers.length;
 const sum = computeSum(selectedNumbers)
 const average = sum / total;
@@ -20,7 +20,6 @@ document.getElementById('average').textContent = average.toFixed(2);
 document.getElementById('min').textContent = min;
 document.getElementById('max').textContent = max;
 
-// Gestire il pulsante "Torna Indietro"
 document.getElementById('backBtn').addEventListener('click', () => {
     window.location.href = 'es1Index.html';
 });
