@@ -1,0 +1,16 @@
+<html>
+<head>
+    <title>Reset Password</title>
+    <script src="otp.js" defer></script>
+</head>
+<body>
+    <h2>Reset Password</h2>
+    <input type="text" id="username" placeholder="Username">
+    <button onclick="sendOTP()">Send OTP</button>
+    <div id="otpSection" style="display:none;">
+        <input type="text" id="otp" placeholder="Enter OTP">
+        <input type="password" id="newPassword" placeholder="New Password">
+        <button onclick="resetPassword()">Reset Password</button>
+    </div>
+</body>
+</html>
