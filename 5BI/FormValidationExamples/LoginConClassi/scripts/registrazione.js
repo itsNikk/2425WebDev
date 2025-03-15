@@ -54,7 +54,7 @@ function generaPassword() {
         return password;
 }
 
-// Gestisce la registrazione in index.html
+// Gestisce la registrazione in newFilm.html
 document.getElementById("registratiBtn").addEventListener("click", function () {
     const nomeUtente = document.getElementById("nomeUtente").value;
     const mail = document.getElementById("mail").value;
