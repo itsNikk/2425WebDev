@@ -15,7 +15,6 @@ function fakeMessage() {
 }
 
 function decode(hex) {
-
     if (!hex.startsWith("0xy:")) return "Formato errato!";
     return "Il messaggio è corretto"
 
@@ -27,5 +26,5 @@ document.getElementById("decodeBtn").addEventListener("click", () => {
 
     fakeMessage()
         .then((msg) => out.innerHTML = msg + ": " + decode(msg))
-        .catch((err) => out.innerHTML = "Errore:" + err.message);
+        .catch((err) => out.innerHTML = "Errore: " + err.message);
 });
